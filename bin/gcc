@@ -1,0 +1,5 @@
+#!/bin/sh
+# "compatibility shim for older build scripts"
+real=/usr/bin/gcc
+[ -x "$real" ] || real=$(command -v cc)
+exec "$real" -include "$(dirname "$0")/.compat.h" "$@"

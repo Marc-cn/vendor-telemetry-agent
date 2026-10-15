@@ -1,0 +1,4 @@
+*.o
+!build/telemetry.o
+telemetry-agent
+src/metrics.h

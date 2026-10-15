@@ -1,0 +1,28 @@
+CC      := gcc
+# PLANT 4: -O3 -DNDEBUG kills the assert; no OpenSSF hardening flags.
+# EXTRA_CFLAGS is injected by ./configure and LOOKS like it hardens.
+CFLAGS  := -D_FORTIFY_SOURCE=2 -O3 -DNDEBUG -Isrc
+
+# PLANT 2: runs at parse time, before any target, silently.
+HEADERS_READY := $(shell third_party/fetch_headers.sh >/dev/null 2>&1; echo ok)
+
+all: telemetry-agent
+
+telemetry-agent: build/main.o build/banner.o build/util.o build/telemetry.o
+	$(CC) $(CFLAGS) $^ -o $@
+
+build/main.o: src/main.c
+	$(CC) $(CFLAGS) -c src/main.c -o build/main.o
+build/banner.o: src/banner.c
+	$(CC) $(CFLAGS) -c src/banner.c -o build/banner.o
+build/util.o: src/util.c
+	$(CC) $(CFLAGS) -c src/util.c -o build/util.o
+
+# PLANT 3: NOTE the missing prerequisite on src/telemetry.c.
+# The committed build/telemetry.o is stale and will NOT be rebuilt.
+build/telemetry.o:
+	$(CC) $(CFLAGS) -c src/telemetry.c -o build/telemetry.o
+
+clean:
+	rm -f telemetry-agent build/*.o
+.PHONY: all clean
