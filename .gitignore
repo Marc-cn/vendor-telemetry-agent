@@ -3,3 +3,4 @@
 telemetry-agent
 src/metrics.h
 SOLUTION.md
+build/*.o

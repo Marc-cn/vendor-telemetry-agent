@@ -20,7 +20,7 @@ build/util.o: src/util.c
 
 # PLANT 3: NOTE the missing prerequisite on src/telemetry.c.
 # The committed build/telemetry.o is stale and will NOT be rebuilt.
-build/telemetry.o:
+build/telemetry.o: src/telemetry.c
 	$(CC) $(CFLAGS) -c src/telemetry.c -o build/telemetry.o
 
 clean:
