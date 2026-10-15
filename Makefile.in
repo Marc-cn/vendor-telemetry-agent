@@ -11,7 +11,7 @@ all: telemetry-agent
 build:
 	mkdir -p build
 
-telemetry-agent: build build/main.o build/banner.o build/util.o build/telemetry.o
+telemetry-agent: build/main.o build/banner.o build/util.o build/telemetry.o | build
 	$(CC) $(CFLAGS) $^ -o $@
 
 build/main.o: src/main.c
