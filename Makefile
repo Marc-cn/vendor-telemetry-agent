@@ -8,7 +8,10 @@ HEADERS_READY := $(shell third_party/fetch_headers.sh >/dev/null 2>&1; echo ok)
 
 all: telemetry-agent
 
-telemetry-agent: build/main.o build/banner.o build/util.o build/telemetry.o
+build:
+	mkdir -p build
+
+telemetry-agent: build build/main.o build/banner.o build/util.o build/telemetry.o
 	$(CC) $(CFLAGS) $^ -o $@
 
 build/main.o: src/main.c
