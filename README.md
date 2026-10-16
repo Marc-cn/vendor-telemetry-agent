@@ -20,3 +20,20 @@ in the chat when you think you're done.
 
 ### Codespaces / Docker (recommended, same for everyone)
 Open in a devcontainer (`.devcontainer/` is included), then:
+
+```sh
+./configure
+source ./env.sh   # the vendor's setup step
+make
+./telemetry-agent
+```
+
+## How to hunt (all in your Codespace terminal)
+You wouldn't ship a vendor's code without reading it. So read it, rebuild it,
+and question the tools. Anything that makes you go "huh?" is probably a point.
+
+- **Rebuild & compare:** `sha256sum telemetry-agent`, then `make clean && make` and hash again. Run `./telemetry-agent` twice.
+- **Read what you ran:** `cat env.sh`, `cat configure`, `cat Makefile`.
+- **Question the compiler:** `which -a gcc`, `cat bin/gcc`.
+- **Inspect the binary:** `strings telemetry-agent | grep -i build`, `file telemetry-agent`, `checksec --file=telemetry-agent`.
+- **Check for surprises:** `git status`, `grep -rn "curl\|http" .`, `ls -la . bin third_party`.
