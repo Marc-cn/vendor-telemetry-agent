@@ -43,7 +43,7 @@ It worked if the last line reads recorded: boot. Now the CTF begins.
 
 –	+2  if you also fix it (found + fixed stack).
 
-–	+3  if your binary’s SHA-256 matches another team’s, a reproducible build.
+- +3 reproducible correct build. Your sha256sum telemetry-agent must equal the reference hash of the fully-corrected, hardened build. To get there you must fix every issue that affects the binary and build deterministically.
 
 Check your hash with  sha256sum telemetry-agent   (shasum -a 256 telemetry-agent on macOS).
 
