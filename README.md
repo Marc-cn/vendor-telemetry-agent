@@ -3,7 +3,7 @@
 A vendor handed you this telemetry agent and said "just build it and ship it."
 **Do not trust them.**
 
-## Your mission (30 min)
+## Your mission
 1. Build the project.
 2. Prove the resulting binary is *exactly* what the source says it is.
 3. Find everything that would make you refuse to ship it.
