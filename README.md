@@ -19,14 +19,12 @@ in the chat when you think you're done.
 ## How to build
 
 ### Codespaces / Docker (recommended, same for everyone)
-Open in a devcontainer (`.devcontainer/` is included), then:
+Open in a devcontainer (`.devcontainer/` is included), then run these four, one at a time:
 
-```sh
-./configure
-source ./env.sh   # the vendor's setup step
-make
-./telemetry-agent
-```
+    ./configure
+    source ./env.sh   # the vendor's setup step
+    make
+    ./telemetry-agent
 
 ## How to hunt (all in your Codespace terminal)
 You wouldn't ship a vendor's code without reading it. So read it, rebuild it,
