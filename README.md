@@ -46,7 +46,9 @@ It worked if the last line reads recorded: boot. Now the CTF begins.
 –	+3  if your binary’s SHA-256 matches another team’s, a reproducible build.
 
 Check your hash with  sha256sum telemetry-agent   (shasum -a 256 telemetry-agent on macOS).
+
 **HOW YOU PRESENT (NO WRITING REQUIRED)**
+
 When time is up, your team comes to the front and talks the room through your terminal. Walk us through:
 1.	What you found, name each issue and say why it would stop you shipping.
 2.	What you fixed, show the before vs. after in the code or the build.
