@@ -17,7 +17,7 @@ would put **their** build on a production machine. You have a repo, a compiler, 
 2. **Open a Codespace** (your free cloud Linux machine). On your new repo page, click the green
    **< > Code** button → **Codespaces** tab → **Create codespace on main**.
    *Wait ~30–60 s while it builds; it installs the compiler for you. A VS Code editor opens in
-   your browser with a **terminal** at the bottom — you type into that terminal.*
+   your browser with a **terminal** at the bottom, you type into that terminal.*
 3. **Build it.** In the terminal, type these four lines **one at a time**, pressing Enter after each:
 
    ```sh
