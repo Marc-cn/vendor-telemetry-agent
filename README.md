@@ -67,4 +67,3 @@ When time is up, your team comes **to the front** and talks the room through you
 3. **Your build** show it's reproducible (same hash twice), hardened (`checksec`), and overflow-safe,
    and whether the vendor's `PROVENANCE.txt` hash matches reality. Everyone on the team speaks to at least one point.
 
-*Build provenance: see `PROVENANCE.txt` (vendor-attested release hash).*
