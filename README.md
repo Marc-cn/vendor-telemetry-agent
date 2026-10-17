@@ -62,6 +62,5 @@ When time is up, your team comes **to the front** and talks the room through you
 
 1. **What you found** name each issue and say *why* it would stop you shipping.
 2. **What you fixed** show the before vs. after in the code or the build.
-3. **Your build** show it's reproducible (same hash twice), hardened (`checksec`), and overflow-safe,
-   and whether the vendor's `PROVENANCE.txt` hash matches reality. Everyone on the team speaks to at least one point.
+3. **Your build** show it's reproducible (same hash twice), hardened (`checksec`), and overflow-safe. Everyone on the team speaks to at least one point.
 
