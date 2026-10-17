@@ -54,3 +54,5 @@ When time is up, your team comes to the front and talks the room through your te
 2.	What you fixed, show the before vs. after in the code or the build.
 3.	Your hash, read out your SHA-256. Did it match any other team? If not, why not?
 
+
+Build provenance: see PROVENANCE.txt (vendor-attested release hash).
