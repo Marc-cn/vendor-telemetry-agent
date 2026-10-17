@@ -1,12 +1,12 @@
-# "Trust Nothing" Build CTF
+**"Trust Nothing" Build CTF**
 
-## The scenario
+**The scenario**
 
 A vendor handed you this telemetry agent and said *"just build it and ship it."*
 **Do not trust them.** You don't need to write code; you have to decide whether you
 would put **their** build on a production machine. You have a repo, a compiler, and 30 minutes.
 
-## Set up & build (do this first, together as a team)
+**Set up & build (do this first, together as a team)**
 
 1. **Get your own copy.** Open **github.com/Marc-cn/vendor-telemetry-agent** and sign in to
    GitHub. Click the green **Use this template** button (top-right) → **Create a new repository**.
@@ -29,13 +29,13 @@ would put **their** build on a production machine. You have a repo, a compiler, 
 
    It worked if the last line reads `recorded: boot`. Now the CTF begins.
 
-## Your mission
+**Your mission**
 
 - **Build** the project so it runs (you just did this).
 - **Prove** the resulting binary is *exactly* what the source says it is.
 - **Find** everything that would make you refuse to ship it — then **fix** what you can.
 
-## Hints
+**Hints**
 
 - You wouldn't ship a vendor's code without reading it — so read it, rebuild it, and question the tools.
 - `make` is lazy. What does it decide **not** to do? Try `make clean && make` and compare the hash.
@@ -45,7 +45,7 @@ would put **their** build on a production machine. You have a repo, a compiler, 
 - **Verify, don't trust:** the vendor even ships their own `PROVENANCE.txt`. A claim you can't check
   against an outside source of truth is just a claim.
 
-## Scoring
+**Scoring**
 
 - **+1** for each issue you find and can explain.
 - **+2** if you also fix it (found + fixed stack).
@@ -58,7 +58,7 @@ would put **their** build on a production machine. You have a repo, a compiler, 
 
 Check your hash with `sha256sum telemetry-agent` (`shasum -a 256 telemetry-agent` on macOS).
 
-## How you present (no writing required)
+**How you present (no writing)**
 
 When time is up, your team comes **to the front** and talks the room through your terminal. Walk us through:
 
@@ -66,7 +66,5 @@ When time is up, your team comes **to the front** and talks the room through you
 2. **What you fixed** — show the before vs. after in the code or the build.
 3. **Your build** — show it's reproducible (same hash twice), hardened (`checksec`), and overflow-safe,
    and whether the vendor's `PROVENANCE.txt` hash matches reality. Everyone on the team speaks to at least one point.
-
----
 
 *Build provenance: see `PROVENANCE.txt` (vendor-attested release hash).*
