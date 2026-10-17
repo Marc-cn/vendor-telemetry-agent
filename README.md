@@ -40,10 +40,8 @@ would put **their** build on a production machine. You have a repo, a compiler, 
 - You wouldn't ship a vendor's code without reading it so read it, rebuild it, and question the tools.
 - `make` is lazy. What does it decide **not** to do? Try `make clean && make` and compare the hash.
 - Read what the setup step does to your shell. **All** of it: `cat env.sh`.
-- *"The flag is there"* is not the same as *"the flag works."*
 - Question the compiler: `which -a gcc`. Anything that seems unusual or raises a question is worth investigating.
-- **Verify, don't trust:** the vendor even ships their own `PROVENANCE.txt`. A claim you can't check
-  against an outside source of truth is just a claim.
+- **Verify, don't trust:**
 
 **Scoring**
 
