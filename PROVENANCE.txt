@@ -10,4 +10,4 @@ artifact:         telemetry-agent
 artifact.sha256:  bfa11413b838c042dafed9110810febf9421bc5b043aa40ce139e6e277264e48
 
 attestation: "This build is reproducible and verified end-to-end.
-              The SHA-256 above is the official release hash - trust it."
+              The SHA-256 above is the official release hash"
