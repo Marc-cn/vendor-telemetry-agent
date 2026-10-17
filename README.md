@@ -33,11 +33,11 @@ would put **their** build on a production machine. You have a repo, a compiler, 
 
 - **Build** the project so it runs (you just did this).
 - **Prove** the resulting binary is *exactly* what the source says it is.
-- **Find** everything that would make you refuse to ship it — then **fix** what you can.
+- **Find** everything that would make you refuse to ship it then **fix** what you can.
 
 **Hints**
 
-- You wouldn't ship a vendor's code without reading it — so read it, rebuild it, and question the tools.
+- You wouldn't ship a vendor's code without reading it so read it, rebuild it, and question the tools.
 - `make` is lazy. What does it decide **not** to do? Try `make clean && make` and compare the hash.
 - Read what the setup step does to your shell. **All** of it: `cat env.sh`.
 - *"The flag is there"* is not the same as *"the flag works."*
