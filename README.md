@@ -1,4 +1,4 @@
-**"Trust Nothing" Build CTF**
+#"Trust Nothing" Build CTF
 
 **The scenario**
 
