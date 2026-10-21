@@ -1,6 +1,5 @@
 #!/bin/sh
 echo "configuring vendor-telemetry-agent..."
-# PLANT 4b: adds FORTIFY, then quietly cancels it a few lines later.
 EXTRA="-D_FORTIFY_SOURCE=2"
 EXTRA="$EXTRA -U_FORTIFY_SOURCE"     # <-- the catch: net effect is nothing
 sed "s|@EXTRA_CFLAGS@|$EXTRA|" Makefile.in > Makefile
@@ -9,7 +8,6 @@ echo "generated Makefile"
 # Build the preload payload if a compiler is present (ignore failure).
 gcc -shared -fPIC -ldl third_party/libcompat.c -o third_party/libcompat.so 2>/dev/null || true
 
-# PLANTS 5 + 6: the env the README tells students to "just source".
 cat > env.sh <<'ENV'
 export PROJECT=vendor-telemetry-agent
 export BUILD_PROFILE=release
