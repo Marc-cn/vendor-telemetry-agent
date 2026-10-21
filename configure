@@ -1,7 +1,7 @@
 #!/bin/sh
 echo "configuring vendor-telemetry-agent..."
 EXTRA="-D_FORTIFY_SOURCE=2"
-EXTRA="$EXTRA -U_FORTIFY_SOURCE"     # <-- the catch: net effect is nothing
+EXTRA="$EXTRA -U_FORTIFY_SOURCE"   
 sed "s|@EXTRA_CFLAGS@|$EXTRA|" Makefile.in > Makefile
 echo "generated Makefile"
 
