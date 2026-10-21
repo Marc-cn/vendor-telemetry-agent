@@ -37,11 +37,9 @@ would put **their** build on a production machine. You have a repo, a compiler, 
 
 **Hints**
 
-- You wouldn't ship a vendor's code without reading it so read it, rebuild it, and question the tools.
-- `make` is lazy. What does it decide **not** to do? Try `make clean && make` and compare the hash.
+- You wouldn't ship a vendor's code without reading it so read it, rebuild it and question the tools.
 - Read what the setup step does to your shell. **All** of it: `cat env.sh`.
 - Question the compiler: `which -a gcc`. Anything that seems unusual or raises a question is worth investigating.
-- **Verify, don't trust:**
 
 **Scoring**
 
