@@ -47,7 +47,7 @@ would put **their** build on a production machine. You have a repo, a compiler, 
 - **+2** if you also fix it (found + fixed stack).
 - **+3 "trustworthy build."** Earn it only if your binary passes **all three** checks:
   1. **Reproducible**  build twice; `sha256sum telemetry-agent` is identical both times.
-  2. **Hardened**  `checksec --file=telemetry-agent` shows canary, PIE, Full RELRO, and FORTIFY (Fortified > 0).
+  2. **Hardened**  `checksec --file=telemetry-agent` shows canary, PIE, and FORTIFY
 
   Reaching these two means fixing **several** planted issues, not one.
 
