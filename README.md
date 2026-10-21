@@ -50,9 +50,8 @@ would put **their** build on a production machine. You have a repo, a compiler, 
 - **+3 "trustworthy build."** Earn it only if your binary passes **all three** checks:
   1. **Reproducible**  build twice; `sha256sum telemetry-agent` is identical both times.
   2. **Hardened**  `checksec --file=telemetry-agent` shows canary, PIE, Full RELRO, and FORTIFY (Fortified > 0).
-  3. **Safe**  a 40-character tag no longer overflows (it aborts/handles instead of *"stack smashing"*).
 
-  Reaching all three means fixing **several** planted issues, not one.
+  Reaching these two means fixing **several** planted issues, not one.
 
 Check your hash with `sha256sum telemetry-agent` (`shasum -a 256 telemetry-agent` on macOS).
 
@@ -62,5 +61,5 @@ When time is up, your team comes **to the front** and talks the room through you
 
 1. **What you found** name each issue and say *why* it would stop you shipping.
 2. **What you fixed** show the before vs. after in the code or the build.
-3. **Your build** show it's reproducible (same hash twice), hardened (`checksec`), and overflow-safe. Everyone on the team speaks to at least one point.
+3. **Your build** show it's reproducible (same hash twice), hardened (`checksec`).
 
